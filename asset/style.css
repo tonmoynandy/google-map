@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+.main-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    min-height:500px;
+}
+
+.show{
+    display: block
+}
+.hide{
+    display: none;
+}
+.left-view{
+  float: left;
+}
+.right-view{
+  float: right;
+}
+
+.nav-container {
+    background:rgba(255, 255, 255, 0.72) ;
+    height: 100%;
+    /*width: 100%;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 999;
+}
+.nav-icon{
+    cursor: pointer;
+}
+.nav-container .form-group{
+    width: 100%;
+}
+.nav-container .form-group input[type=text]{
+    width: 100%;
+    padding:10px 0px 10px 5px;
+    border-radius: 0px;
+    border: none;
+    margin:  1px 0px;
+}
+.nav-container .form-group .route-label{
+    margin-top: 5px;
+    position: relative;
+    width: 32%;
+    display: inline-block;
+    text-align: center;
+    background: #CCC;
+    padding: 10px;
+}
+.nav-container .form-group .route-label span{
+    position: absolute;
+    top: 0;
+    left: 25%;
+    font-size: 30px;
+}
+.nav-container .form-group .route-label input{
+    opacity: 0;
+}
+.nav-container .form-group #knowDirection{
+    color: #fff;
+    font-family: arial;
+    font-size: 14px;
+    text-decoration: none;
+}
+.search-location-box {
+  margin: 0px;
+  padding: 0;
+  
+}
+.search-location-box .sub-search-box-left{
+  width:86%;
+  background: #FFF;
+  color:#CCC;
+  text-align: center;
+}
+.search-location-box .sub-search-box-left input{
+  width:90%;
+  padding:10px 0px 10px 5px;
+  border-radius: 0px;
+  border: none;
+  margin:  1px 0px;
+}
+.search-location-box .sub-search-box-right{
+ width:14%;
+ padding:9px 0px 10px 5px;
+ background: #FFF;
+ border-left: 1px solid #CCC;
+ text-align: center;
+}
+
+
+.location-details-content{
+  clear: both;
+  margin: 5px;
+  padding: 5px;
+}
+.location-details-content #location-name {
+    font-size: 20px;
+    color: #f52f08;
+    padding: 10px 0;
+}
+
+
+.location-details-content #location-name > img {
+    width: 25px;
+}
+.location-details-content #location-address i ,.location-details-content #location-phone i{
+  color: #119ebe;
+  font-size: 30px;
+}
+.location-details-content #location-address span ,.location-details-content #location-phone span{
+  font-size:16px;
+}

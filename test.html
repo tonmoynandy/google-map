@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <link rel="stylesheet" href="asset/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="asset/style.css" media="all" />
+    <script src="asset/jquery.min.js" ></script>
+    <script src="asset/bootstrap.min.js" ></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4pJi1IXBJxNACc1DstGMyY1AxgJPlOsU&libraries=places&callback=initMap">
+    </script>
+
+<script>
+    var map ; var start_destination , end_destination;
+    var start_autocomplete , end_autocomplete;
+    var start_latlng, end_latlng;
+    var directionsDisplay ,directionsService, placeService;
+    var markerIcon ='';
+    function initMap() {
+        
+        var mapContent = document.getElementById('map');
+	map = new google.maps.Map(mapContent, {
+	 zoom: 12,
+	 center: {lat: 41.85, lng: -87.65}
+       });
+	
+	// for traffic view 
+	var trafficLayer = new google.maps.TrafficLayer();
+	trafficLayer.setMap(map);
+       /////////
+       
+       // set marker on client current location
+      if (navigator.geolocation) {
+	 navigator.geolocation.getCurrentPosition(function(position) {
+	   var pos = {
+	     lat: position.coords.latitude,
+	     lng: position.coords.longitude
+	   };
+	   map.setCenter(pos);
+	   var myLatLng = new google.maps.LatLng(pos.lat,pos.lng);
+	   var marker = new google.maps.Marker({
+	     position: myLatLng,
+	     map: map,
+	     title: 'place',
+	     zIndex: 100
+	     });
+	   
+	 });
+      }
+     
+
+            
+
+    }
+    $(document).ready(function(e) {
+        var hheight = $(window).height();
+        $('#map').css('height', Number(hheight)-20);
+        $(window).resize(function(){
+            var hheight = $(window).height();
+            $('#map').css('height', hheight);
+        });
+    });
+  
+</script>
+    <title>Google Map</title>
+</head>
+
+<body>
+
+<div id="map"  style="margin-top:20px ;width:100%;height: 400px;"></div>
+
+</body>
+</html>

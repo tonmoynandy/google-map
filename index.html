@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <link rel="stylesheet" href="asset/style.css" media="all" />
+	<link rel="stylesheet" href="asset/font-awesome.css" media="all" />
+    <script src="asset/jquery.min.js" ></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4pJi1IXBJxNACc1DstGMyY1AxgJPlOsU&libraries=places&callback=initMap">
+    </script>
+    <script src="asset/script.js" ></script>
+
+    <title>Google Map</title>
+</head>
+
+<body>
+<header>
+	<a class="nav-icon"><i class="fa fa-list"></i></a>
+</header>
+<div class="main-container">
+		<div class="nav-container">
+		
+		<div class="search-location-box">
+			<div class="sub-search-box left-view sub-search-box-left">
+				<input type="text" class="" id="start_destination" placeholder="Search Location">
+				<i class="fa fa-search"></i>
+			</div>
+			<div class="sub-search-box right-view sub-search-box-right">
+				<a href="javascript:" class="direction-link"><i class="fa fa-random"></i></a>
+			</div>
+		</div>
+		<div class="location-details-content hide">
+			<h1 id="location-name"></h1>
+			<div id="location-address"><i class="fa fa-map-marker"></i> <span></span></div>
+			<div id="location-phone"><i class="fa fa-phone" aria-hidden="true"></i><span></span></div>
+		</div>
+		
+		<!--<div class="form-group">
+			<a href="javascript:" id="knowDirection">Want to know direction?</a>
+		</div>
+		
+		<div class="form-group hide to-direction">
+		<input type="text" class="form-control" id="end_destination"  placeholder="End Destination">
+			
+		</div>
+		
+		<div class="form-group">
+		<label class="route-label"><input type="radio" name="route_type" value="DRIVING" checked/><span><i class="fa fa-car" aria-hidden="true"></i></span></label>
+		<label class="route-label"><input type="radio" name="route_type" value="WALKING"/><span><i class="fa fa-blind" aria-hidden="true"></i></span></label>
+		<label class="route-label"><input type="radio" name="route_type" value="TRANSIT"/><span><i class="fa fa-bicycle" aria-hidden="true"></i></span></label>
+		</div>
+		<div class="form-group">
+		<button class="btn btn-primary searchBtn" onclick="searchRoute()">Search</button>
+		<button class="btn btn-danger getDirection" onclick="showDirection()">Show Direction</button>
+		<button class="btn btn-danger getNearbyLoc" onclick="showNearbyLoc()">Nearby Location</button>
+		</div>
+		
+		<div class="nearby-location-type">
+		<div id="nearByLocationsType"></div>
+		</div>
+		<div id="nearby-loc"></div>
+		<div class="directionContainer">
+		<div id="directions-panel"></div>
+		</div>
+		-->
+	</div>
+	<div class="row">
+		<div id="map"  style="width:100%;height: 400px;"></div>
+	</div>
+
+</div>
+
+</body>
+</html>
