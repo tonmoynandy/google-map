@@ -4,8 +4,10 @@
 <head>
     
     <link rel="stylesheet" href="asset/style.css" media="all" />
+	<link rel="stylesheet" href="asset/rateit.css" media="all" />
 	<link rel="stylesheet" href="asset/font-awesome.css" media="all" />
     <script src="asset/jquery.min.js" ></script>
+	<script src="asset/jquery.rateit.js" ></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4pJi1IXBJxNACc1DstGMyY1AxgJPlOsU&libraries=places&callback=initMap">
     </script>
     <script src="asset/script.js" ></script>
@@ -31,9 +33,14 @@
 		</div>
 		<div class="location-details-content hide">
 			<h1 id="location-name"></h1>
-			<div id="location-address"><i class="fa fa-map-marker"></i> <span></span></div>
-			<div id="location-phone"><i class="fa fa-phone" aria-hidden="true"></i><span></span></div>
-		</div>
+			<div class="location-main-content">
+				<div id="location-address" class="sub-location-content"><i class="fa fa-map-marker"></i> <span></span></div>
+				<div id="location-phone" class="sub-location-content"><i class="fa fa-phone" aria-hidden="true"></i><span></span></div>
+				<div id="location-rate" class="sub-location-content"><span></span>
+				<div class="rateit" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+				</div>
+			</div>
+			</div>
 		
 		<!--<div class="form-group">
 			<a href="javascript:" id="knowDirection">Want to know direction?</a>

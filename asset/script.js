@@ -177,7 +177,7 @@ var map ; var start_destination , end_destination;
             start_autocomplete.addListener('place_changed', function() {
                 
             var place = start_autocomplete.getPlace();
-            
+            console.log(place);
               if (place.geometry) {
                 
                  
@@ -193,9 +193,12 @@ var map ; var start_destination , end_destination;
                   icon: place.icon
                   });
                  
-                 $(".location-details-content #location-name").html("<img src='"+place.icon+"'/> "+place.name);
+                 $(".location-details-content #location-name").html(place.name);
                  $(".location-details-content #location-address span").text(place.formatted_address);
-                 $(".location-details-content #location-phone span").text(place.formatted_phone_number);
+                 $(".location-details-content #location-phone span").text(place.international_phone_number);
+                
+                 //$(".location-details-content #location-rate .rateit").attr('data-rateit-value',place.rating);
+                 $('.location-details-content #location-rate .rateit').rateit({value:place.rating });
                  $(".location-details-content").addClass('show');
                  $(".location-details-content").removeClass('hide');
                  //$(".nav-icon").trigger('click');

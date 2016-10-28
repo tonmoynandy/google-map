@@ -102,23 +102,40 @@
 
 .location-details-content{
   clear: both;
-  margin: 5px;
-  padding: 5px;
+  margin: 0;
+  padding: 0;
+  background: rgba(66, 133, 255, 0.78);
+  color: #FFF;
 }
 .location-details-content #location-name {
     font-size: 20px;
-    color: #f52f08;
-    padding: 10px 0;
+    padding: 10px 5px;
+    
 }
-
 
 .location-details-content #location-name > img {
     width: 25px;
 }
-.location-details-content #location-address i ,.location-details-content #location-phone i{
-  color: #119ebe;
-  font-size: 30px;
+.location-main-content{
+  display: table;
 }
-.location-details-content #location-address span ,.location-details-content #location-phone span{
-  font-size:16px;
+.sub-location-content {
+   display: table-row;
+}
+.sub-location-content i{
+  text-align: center;
+  display: table-cell;
+  font-size: 30px;
+  width:30px;
+}
+.sub-location-content span{
+  display: table-cell;
+  font-size: 12px;
+  padding: 0 0 17px;
+  vertical-align: middle;
+  line-height: 20px;
+}
+
+.sub-location-content #location-rate > span {
+    font-size: 30px;
 }
