@@ -7,8 +7,7 @@
 	<link rel="stylesheet" href="asset/rateit.css" media="all" />
 	<link rel="stylesheet" href="asset/font-awesome.css" media="all" />
     <script src="asset/jquery.min.js" ></script>
-	<script src="asset/jquery.rateit.js" ></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4pJi1IXBJxNACc1DstGMyY1AxgJPlOsU&libraries=places&callback=initMap">
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4pJi1IXBJxNACc1DstGMyY1AxgJPlOsU&libraries=places&callback=initMap">
     </script>
     <script src="asset/script.js" ></script>
 
@@ -17,13 +16,17 @@
 
 <body>
 <header>
-	<a class="nav-icon"><i class="fa fa-list"></i></a>
+	
 </header>
 <div class="main-container">
+	    <div class="small-nav">
+		<a class="nav-icon"><i class="fa fa-angle-double-right"></i></a>
+		</div>
 		<div class="nav-container">
 		
 		<div class="search-location-box">
 			<div class="sub-search-box left-view sub-search-box-left">
+				<a class="nav-icon"><i class="fa fa-angle-double-left"></i></a>
 				<input type="text" class="" id="start_destination" placeholder="Search Location">
 				<i class="fa fa-search"></i>
 			</div>
@@ -32,13 +35,14 @@
 			</div>
 		</div>
 		<div class="location-details-content hide">
+			<img src="asset/not-found.png" class="placePhoto hide"  />
+			<div class="more-images">
+				<ul></ul>
+			</div>
 			<h1 id="location-name"></h1>
 			<div class="location-main-content">
 				<div id="location-address" class="sub-location-content"><i class="fa fa-map-marker"></i> <span></span></div>
-				<div id="location-phone" class="sub-location-content"><i class="fa fa-phone" aria-hidden="true"></i><span></span></div>
-				<div id="location-rate" class="sub-location-content"><span></span>
-				<div class="rateit" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
-				</div>
+				<!--<div id="location-phone" class="sub-location-content"><i class="fa fa-phone" aria-hidden="true"></i><span></span></div>-->
 			</div>
 			</div>
 		

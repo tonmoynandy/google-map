@@ -16,8 +16,11 @@ var map ; var start_destination , end_destination;
         
         var mapContent = document.getElementById('map');
 	map = new google.maps.Map(mapContent, {
-	 zoom: 12,
-	 center: {lat: 41.85, lng: -87.65}
+                zoom: 12,
+                center: {lat: 41.85, lng: -87.65},
+                mapTypeControlOptions: {
+                 mapTypeIds: []
+               }
        });
 	
 	// for traffic view 
@@ -177,7 +180,7 @@ var map ; var start_destination , end_destination;
             start_autocomplete.addListener('place_changed', function() {
                 
             var place = start_autocomplete.getPlace();
-            console.log(place);
+           console.log(place);
               if (place.geometry) {
                 
                  
@@ -195,12 +198,33 @@ var map ; var start_destination , end_destination;
                  
                  $(".location-details-content #location-name").html(place.name);
                  $(".location-details-content #location-address span").text(place.formatted_address);
-                 $(".location-details-content #location-phone span").text(place.international_phone_number);
-                
-                 //$(".location-details-content #location-rate .rateit").attr('data-rateit-value',place.rating);
-                 $('.location-details-content #location-rate .rateit').rateit({value:place.rating });
+                 
                  $(".location-details-content").addClass('show');
                  $(".location-details-content").removeClass('hide');
+                 if (place.photos != undefined) {
+                        var placePhotos = place.photos;
+                        var placeImg = placePhotos[0].getUrl({'maxWidth': 600, 'maxHeight': 600});
+                        placeImg = placeImg.replace('https','http');
+                        $(".placePhoto").attr('src',placeImg);
+                        $(".placePhoto").addClass('show');
+                        $(".placePhoto").removeClass('hide');
+                        var imgcontent ='';
+                        $.each(placePhotos,function(key,value){
+                                var i = value.getUrl({'maxWidth': 300, 'maxHeight': 300});
+                                //i = i.replace('https','http');
+                               imgcontent +="<li>";
+                               imgcontent +="<img class='thumbplacephoto' src='"+i+"' />";
+                               imgcontent +="</li>";
+                        })
+                        
+                        $(".more-images ul").html(imgcontent); 
+                 }else{
+                        $(".more-images ul").empty();
+                        $(".placePhoto").removeClass('show');
+                        $(".placePhoto").addClass('hide');
+                 }
+                 
+                 
                  //$(".nav-icon").trigger('click');
                  //document.getElementById("start_direction_lat_lng").value = pos.G=','+pos.K;
               }
